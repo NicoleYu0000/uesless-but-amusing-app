@@ -34,6 +34,9 @@ struct ContentView: View {
                         .cornerRadius(20)
                     
                 }
+                HStack{
+                    Image("dream")
+                }
                 NavigationLink(destination: NextPageView(), isActive: $showView) { EmptyView() }
             }
             .padding()
