@@ -8,12 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var wish = ""
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack (spacing: 50){
+            Text("What do you want to be the best at?")
+                .multilineTextAlignment(.center)
+                .font(.system(size: 30))
+                .padding()
+            TextField("Enter your wish", text: $wish)
+                .multilineTextAlignment(.center)
+                .font(.system(size: 20))
+            
+            Button {
+                print("HI Im someone")
+            } label : {
+                Text("Enter")
+                    .padding()
+                    .frame(width: 300, height: 60)
+                    .foregroundColor(.white)
+                    .background(.blue)
+                    .font(.system(size: 50))
+                    .cornerRadius(20)
+                    
+            }
         }
         .padding()
     }
