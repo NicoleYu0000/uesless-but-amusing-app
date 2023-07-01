@@ -9,30 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var wish = ""
+    @State private var showView = false
     var body: some View {
-        VStack (spacing: 50){
-            Text("What do you want to be the best at?")
-                .multilineTextAlignment(.center)
-                .font(.system(size: 30))
-                .padding()
-            TextField("Enter your wish", text: $wish)
-                .multilineTextAlignment(.center)
-                .font(.system(size: 20))
-            
-            Button {
-                print("HI Im someone")
-            } label : {
-                Text("Enter")
+        NavigationView {
+            VStack (spacing: 50){
+                Text("What do you want to be the best at?")
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 30))
                     .padding()
-                    .frame(width: 300, height: 60)
-                    .foregroundColor(.white)
-                    .background(.blue)
-                    .font(.system(size: 50))
-                    .cornerRadius(20)
+                TextField("Enter your wish", text: $wish)
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 20))
+                
+                Button {
+                    print("Saving your wish")
+                    self.showView = true
+                } label : {
+                    Text("Enter")
+                        .padding()
+                        .frame(width: 300, height: 60)
+                        .foregroundColor(.white)
+                        .background(.blue)
+                        .font(.system(size: 50))
+                        .cornerRadius(20)
                     
+                }
+                NavigationLink(destination: NextPageView(), isActive: $showView) { EmptyView() }
             }
+            .padding()
         }
-        .padding()
     }
 }
 
