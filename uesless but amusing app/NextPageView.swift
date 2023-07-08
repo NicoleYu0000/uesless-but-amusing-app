@@ -11,6 +11,8 @@ struct NextPageView: View {
     @State private var counter = 0
     
     
+    
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -28,11 +30,10 @@ struct NextPageView: View {
                     .padding()
                     .font(.title)
                     .foregroundColor(.purple)
-
                 
                 Button {
                     print("Pressed")
-                    if counter > 60 {
+                    if counter >= 60 {
                         self.showView = true
                     }
                     counter += 1

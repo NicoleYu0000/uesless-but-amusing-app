@@ -9,8 +9,16 @@ import SwiftUI
 
 struct LastPageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack{
+            Text("Congrat! You are the first in... \n  1 \n participant")
+                .multilineTextAlignment(.center)
+                .font(.largeTitle)
+                .padding()
+            
+            Text("So SOrrY ThaT No ONe ElSe PLaY THiS🤪")
+        }
+        }
+        
 }
 
 struct LastPageView_Previews: PreviewProvider {
