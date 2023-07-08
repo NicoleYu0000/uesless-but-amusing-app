@@ -10,7 +10,7 @@ struct NextPageView: View {
     @State private var showView = false
     @State private var counter = 0
     
-    
+    var wish : String = ""
     
     
     var body: some View {
@@ -47,7 +47,7 @@ struct NextPageView: View {
                         .background(AngularGradient(colors: [.blue, .mint, .cyan, .blue], center: .center))
                         .cornerRadius(100)
                 }
-                NavigationLink(destination:LastPageView(), isActive: $showView) { EmptyView()}
+                NavigationLink(destination:LastPageView(wish: wish), isActive: $showView) { EmptyView()}
             }
         }
     }

@@ -36,7 +36,7 @@ struct ContentView: View {
                 HStack{
                     Image("dream")
                 }
-                NavigationLink(destination: NextPageView(), isActive: $showView) { EmptyView() }
+                NavigationLink(destination: NextPageView(wish: wish), isActive: $showView) { EmptyView() }
             }
             .padding()
         }
