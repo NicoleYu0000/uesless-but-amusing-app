@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct LastPageView: View {
-    @Binding var wish : String = ""
+    var wish : String = ""
     @State var previewWish: String = "Something random"
     var body: some View {
-       
+        
         Text("Congratulations")
-        Text("You managed to become first in \(wish)")
+        Text("You managed to become first in")
+        Text("\(wish)")
+            .font(.largeTitle)
     }
 }
 
 struct LastPageView_Previews: PreviewProvider {
     static var previews: some View {
-        LastPageView()
+        LastPageView(wish: "Some random thing")
     }
 }
