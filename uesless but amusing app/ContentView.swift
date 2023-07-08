@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding var wish : String
+    @Binding var wish : String = ""
     @State private var showView = false
     var body: some View {
         NavigationView {
@@ -43,6 +43,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+      
         ContentView()
+       
     }
 }

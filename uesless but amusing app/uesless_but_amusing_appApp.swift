@@ -11,6 +11,7 @@ import SwiftUI
 struct uesless_but_amusing_appApp: App {
     var body: some Scene {
         WindowGroup {
+           
             ContentView()
         }
     }
