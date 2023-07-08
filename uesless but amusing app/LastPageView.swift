@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct LastPageView: View {
+    @Binding var wish : String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Text("Congratulations")
+        Text("You managed to become first in \(wish)")
     }
 }
 
 struct LastPageView_Previews: PreviewProvider {
     static var previews: some View {
-        LastPageView()
+        LastPageView(wish: )
     }
 }

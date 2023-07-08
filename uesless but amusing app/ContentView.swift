@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var wish = ""
+    @Binding var wish : String
     @State private var showView = false
     var body: some View {
         NavigationView {
@@ -20,7 +20,7 @@ struct ContentView: View {
                 TextField("Enter your wish", text: $wish)
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20))
-                
+                LastPageView(wish: $wish)
                 Button {
                     print("Saving your wish")
                     self.showView = true
@@ -34,7 +34,7 @@ struct ContentView: View {
                         .cornerRadius(20)
                     
                 }
-                NavigationLink(destination: NextPageView(), isActive: $showView) { EmptyView() }
+                NavigationLink(destination: NextPageView(wish: $wish), isActive: $showView) { EmptyView() }
             }
             .padding()
         }
