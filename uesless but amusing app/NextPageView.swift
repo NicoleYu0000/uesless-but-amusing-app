@@ -8,6 +8,7 @@
 import SwiftUI
 struct NextPageView: View {
     @State private var showView = false
+    @State private var counter = 0
     
     
     var body: some View {
@@ -23,9 +24,18 @@ struct NextPageView: View {
                 
                     .font(.largeTitle)
                 
+                Text("\(counter) ")
+                    .padding()
+                    .font(.title)
+                    .foregroundColor(.purple)
+
+                
                 Button {
                     print("Pressed")
-                    self.showView = true
+                    if counter > 60 {
+                        self.showView = true
+                    }
+                    counter += 1
                 } label: {
                     Text("Press for your dreams")
                         .font(.largeTitle)
