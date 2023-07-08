@@ -33,8 +33,9 @@ struct NextPageView: View {
                 
                 Button {
                     print("Pressed")
-                    if counter >= 60 {
+                    if counter == 60 {
                         self.showView = true
+                        counter = -1
                     }
                     counter += 1
                 } label: {
